@@ -1,0 +1,7 @@
+<h1>Available Books</h1>
+
+<%= link_to "Add New Book", new_book_path, class: "btn btn-primary" %>
+
+<% @books.each do |book| %>
+  <p><%= link_to book.title, book_path(book) %> - <%= book.available ? 'Available' : 'Borrowed' %></p>
+<% end %>

@@ -1,0 +1,5 @@
+<h1>My Borrowed Books</h1>
+<% current_user.borrowings.where(returned: false).each do |borrowing| %>
+	<p><%= borrowing.book.title %> - Due: <%= borrowing.due_date %>
+	<%= button_to "Return", borrowing_path(borrowing), method: :patch %></p>
+<% end %>
